@@ -1,0 +1,52 @@
+
+<h2>   <%= @ad.title %> </h2>
+
+
+<p>
+	<b> Ad ID: </b>
+	<%= @ad.id %>
+
+
+
+<p>
+  <b>Owner:</b>
+	<%= @ad.user.name %>
+</p>
+
+<p>
+	<b> Watch the ad </b> </br>
+	<%= @res.html.html_safe %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @ad.link %>
+</p>
+
+
+<p>
+  <b>Desc:</b>
+  <%= @ad.desc %>
+</p>
+
+
+<p>
+  <b>Goal:</b> <%= @ad.goal %> <br />
+  <b> Amount Raised:</b> <%= @total %> 
+</p>
+
+<p>
+	<b> Contributions: </b>
+	<ul>
+	<% @contributions.each do |a| %>   
+		<li><%=a.user.name%>: <%=a.amount %></li>
+	<% end %>
+	</ul>
+</p>
+<br />
+
+<h3> Contribute </h3>
+<%= render :partial => '/contributions/form', :locals=> {:contribution => Contribution.new, :ad_id => @ad.id} %>
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>

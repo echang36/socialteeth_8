@@ -8,17 +8,26 @@
     <%= yield(:head) %>
   </head>
   <body>
-  
-	<div id="user_nav">
-	  <% if user_signed_in? %>
-		Signed in as <%= current_user.email %>. Not you?
-		<%= link_to("Sign out", destroy_user_session_path, :method => :delete) %>
-	  <% else %>
-		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-	  <% end %>
+	
+	<div id = "header" class="top-bar">
+		<div id="title"> <h1> Social Teeth </h1> </div>
+		
+		<ul id="nav">
+			<li class="browse">Browse</li>
+			<li class="submit an ad"> Submit an Ad</li>
+		</ul>
+		
+		<div id="user_nav">
+		  <% if user_signed_in? %>
+			Signed in as <%= current_user.email %>. Not you?
+			<%= link_to("Sign out", destroy_user_session_path, :method => :delete) %>
+		  <% else %>
+			<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+		  <% end %>
+		</div>
 	</div>
 	
-    <div id="container">
+    <div id="container" class="group">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>

@@ -5,3 +5,70 @@
  *= require_self
  *= require_tree . 
 */
+
+/* COLORS
+dark gray: #252525
+watermelon: #F16251;
+dark brown: #202020;
+*/
+
+/* General */
+	html { width:100%; height:100%; }
+	body { width:auto; height:auto; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; color:#252525; }
+
+/* Typography */
+	/* For IE */
+	@font-face {
+		font-family: 'BlackoutMidnight';
+		src: url('Blackout-Midnight-webfont.eot');
+	}
+	/* For other browsers */
+	@font-face{
+		font-family: 'BlackoutMidnight';
+		src: url (//:) format ('no404'),
+			 url('Blackout-Midnight-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('Blackout-Midnight-webfont.woff') format('woff'),
+			 url('Blackout-Midnight-webfont.ttf') format('truetype'),
+			 url('Blackout-Midnight-webfont.svg#BlackoutMidnight') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	h1, h2, h3, h4, h5, h6 { font-weight:bold; }
+	h1 { font-family: "BlackoutMidnight", Helvetica, sans-serif; font-size: 48px; letter-spacing: 12px; }
+	h2 { font-size: 32px; letter-spacing: -2px; }
+	h3 { font-size: 32px; }
+	h4 { font-size: 24px; }
+	h5 { font-size: 18px; }
+	h6 { font-size: 16px; }
+	p { font-size:1em; margin-bottom:24px; line-height:1.5em; }
+	
+	
+/* outer containers */
+	#header { width:100%; z-index:10000; }
+	#body { width:100%; }
+	#footer { width:100%; }
+		
+/* header */
+	#header .wrap { width:1024px; margin:0 auto; position:relative; overflow:visible; }
+	#header .top-bar { width:100%; height:50px; }
+	#header #logo { float:left; margin: 10px 10px 10px 10px; }
+	#header #user_nav { float: right; height:24px; line-height:24px; background:transparent }
+
+/* nav buttons */
+	ul#nav { float:left; height:32px; line-height:32px; margin:0; }
+	ul#nav li a { color:#bbb; font-size:14px; float:left; text-decoration:none; font-weight:normal; padding-right:20px; text-align:center; }
+	ul#nav li.selected a,
+	ul#nav li.selected a:hover { color:#e93e27; }
+	ul#nav li a:hover { color:#e93e27; }
+	
+/* for clearing */
+	.group:before, .group:after{
+		content: "";
+		display: table;
+	}
+	.group:after{
+		clear: both;
+	}
+	.group {
+		zoom: 1; /*IE6&7*/
+	}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
@@ -7,34 +8,46 @@
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
+  
   <body>
-	
-	<div id = "header" class="top-bar">
-		<div id="title"> <h1> Social Teeth </h1> </div>
+	 <div id="user_wrapper">
+	  <% if user_signed_in? %>
+		Signed in as <%= current_user.email %>. Not you?
+		<%= link_to("Sign out", destroy_user_session_path, :method => :delete) %>
+	  <% else %>
+		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+	  <% end %>
+	 </div>
+  
+	 <div id="banner" class="group">
+		<div id="logo"> <h1>Social Teeth </h1></div>
 		
-		<ul id="nav">
-			<li class="browse">Browse</li>
-			<li class="submit an ad"> Submit an Ad</li>
-		</ul>
+		<nav id="primary"> 
+			<ul>
+			<li><a hrefs="#"> Browse Ads </a></li>
+			<li><a hrefs="#"> Submit an Ad </a></li>
+			<li><a hrefs="#"> About Social Teeth </a> </li>
+
+
+			</ul>
+		</nav>
+	 </div>
+	 
+
+     <div id="wrapper">
 		
-		<div id="user_nav">
-		  <% if user_signed_in? %>
-			Signed in as <%= current_user.email %>. Not you?
-			<%= link_to("Sign out", destroy_user_session_path, :method => :delete) %>
-		  <% else %>
-			<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-		  <% end %>
+		 <div id="main-content">
+	    	<% flash.each do |name, msg| %>
+				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		    <% end %>
+		    <%= content_tag :h1, yield(:title) if show_title? %>
+			  
+			  
+			<%= yield %>
 		</div>
+	  
 	</div>
-	
-    <div id="container" class="group">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
-	  
-	  
-      <%= yield %>
-    </div>
+ 
+ 
   </body>
 </html>

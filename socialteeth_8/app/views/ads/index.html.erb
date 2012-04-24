@@ -1,0 +1,21 @@
+<% title "Ads" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Goal</th>
+  </tr>
+  <% for ad in @ads %>
+    <tr>
+      <td><%= ad.title %></td>
+      <td><%= ad.user %></td>
+      <td><%= ad.goal %></td>
+      <td><%= link_to "Show", ad %></td>
+      <td><%= link_to "Edit", edit_ad_path(ad) %></td>
+      <td><%= link_to "Destroy", ad, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Ad", new_ad_path %></p>

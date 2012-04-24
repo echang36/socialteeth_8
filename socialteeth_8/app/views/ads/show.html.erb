@@ -1,0 +1,25 @@
+<% title "Ad" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ad.title %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @ad.user.email %>
+</p>
+<p>
+  <strong>Goal:</strong>
+  <%= @ad.goal %>
+</p>
+
+ <%= link_to "Contribute", new_contribution_path(:ad_id=>@ad.id) %>
+
+<p>
+	
+	  <%= link_to "Edit", edit_ad_path(@ad) %> |
+
+		<%= link_to "Destroy", @ad, :confirm => 'Are you sure?', :method => :delete %> |
+
+	<%= link_to "View All", ads_path %>
+</p>

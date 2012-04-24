@@ -1,0 +1,21 @@
+<% title "Contributions" %>
+
+<table>
+  <tr>
+    <th>Ad</th>
+    <th>User</th>
+    <th>Amount</th>
+  </tr>
+  <% for contribution in @contributions %>
+    <tr>
+      <td><%= contribution.ad_id %></td>
+      <td><%= contribution.user_id %></td>
+      <td><%= contribution.amount %></td>
+      <td><%= link_to "Show", contribution %></td>
+      <td><%= link_to "Edit", edit_contribution_path(contribution) %></td>
+      <td><%= link_to "Destroy", contribution, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Contribution", new_contribution_path %></p>

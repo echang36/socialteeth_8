@@ -1,0 +1,14 @@
+<%= form_for @contribution do |f| %>
+  <%= f.error_messages %>
+
+  
+    <%= hidden_field_tag :ad_id, params[:ad_id] %>
+	
+
+  <p>
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </p>
+  <p><%= f.submit %></p>
+
+  <% end %>

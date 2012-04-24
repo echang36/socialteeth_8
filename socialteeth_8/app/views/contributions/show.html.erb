@@ -1,0 +1,20 @@
+<% title "Contribution" %>
+
+<p>
+  <strong>Ad:</strong>
+  <%= @contribution.ad.title %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @contribution.user.email %>
+</p>
+<p>
+  <strong>Amount:</strong>
+  <%= @contribution.amount %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_contribution_path(@contribution) %> |
+  <%= link_to "Destroy", @contribution, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", contributions_path %>
+</p>

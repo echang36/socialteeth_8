@@ -5,7 +5,7 @@ class AdsController < ApplicationController
   
   
   def index
- #   @ads = Ad.all
+    @ads = Ad.all
   end
 
   def show
@@ -14,7 +14,6 @@ class AdsController < ApplicationController
 
   def new
   #  @ad = Ad.new
-	@ads=Ad.all
   end
 
   def create	

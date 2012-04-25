@@ -14,7 +14,13 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_contribution_path(@contribution) %> |
+ <% if can? :update, @ad %>
+	<%= link_to "Edit", edit_contribution_path(@contribution) %> |
+ <% end %>
+ 
+ <if can? :destroy, @ad %>
   <%= link_to "Destroy", @contribution, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", contributions_path %>
+ <% end %> 
+ 
+
 </p>

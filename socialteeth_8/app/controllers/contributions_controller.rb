@@ -1,15 +1,17 @@
 class ContributionsController < ApplicationController
   before_filter :authenticate_user!, :except=>[:show, :index]
+  load_and_authorize_resource
+  
   def index
-    @contributions = Contribution.all
+   # @contributions = Contribution.all
   end
 
   def show
-    @contribution = Contribution.find(params[:id])
+  #  @contribution = Contribution.find(params[:id])
   end
 
   def new
-    @contribution = Contribution.new
+  #  @contribution = Contribution.new
   end
 
   def create
@@ -23,7 +25,7 @@ class ContributionsController < ApplicationController
   end
 
   def update
-    @contribution = Contribution.find(params[:id])
+ #   @contribution = Contribution.find(params[:id])
     if @contribution.update_attributes(params[:contribution])
       redirect_to @contribution, :notice  => "Successfully updated contribution."
     else
@@ -32,7 +34,7 @@ class ContributionsController < ApplicationController
   end
 
   def destroy
-    @contribution = Contribution.find(params[:id])
+ #   @contribution = Contribution.find(params[:id])
     @contribution.destroy
     redirect_to contributions_url, :notice => "Successfully destroyed contribution."
   end

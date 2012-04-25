@@ -1,6 +1,8 @@
 class Ad < ActiveRecord::Base
-  attr_accessible :title, :user, :goal
+  attr_accessible :title, :user, :goal, :format
   
-  belongs_to :user
+  belongs_to :user, :dependent => :destroy
   has_many :contributions
+  
+  validates_inclusion_of :format, :in=>[0,1,2], :allow_nil => false
 end

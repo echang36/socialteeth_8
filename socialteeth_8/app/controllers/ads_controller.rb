@@ -1,5 +1,6 @@
 class AdsController < ApplicationController
   
+  before_filter :authenticate_user!, :except=>[:show, :index]
   
   def index
     @ads = Ad.all

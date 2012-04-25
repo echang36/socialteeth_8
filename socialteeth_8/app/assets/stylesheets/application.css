@@ -9,12 +9,13 @@
 /* COLORS
 watermelon: #F16251;
 dark gray/brown: #202020;
+dark green/gray:#4F4F3C
 light gray:#fafaf6;
 */
 
 /* General */
 	html { width:100%; height:100%; }
-	body { background:#FFFFFF; padding:0; margin:0; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; color:#252525;}
+	body { background:#FFFFFF; padding:0; margin:0; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; color:#4F4F3C;}
 	
 /* Typography */
 	@font-face { 	/* For IE */
@@ -40,6 +41,9 @@ light gray:#fafaf6;
 	h6 { font-size: 16px; }
 	p { font-size:1em; margin-bottom:24px; line-height:1.5em; }
 	
+	a { color: #4F4F3C; text-decoration: none; }
+	a:hover { text-decoration: underline; }
+
 	
 /* Layout */	
 	#user_wrapper, #banner, #wrapper{
@@ -70,7 +74,7 @@ light gray:#fafaf6;
 	}
 	
 /* Header styles*/
-	#logo {float:left; font-size: 48px; color: #241404; background-color:transparent; text-transform:uppercase;}
+	#logo {float:left; font-size: 48px; color: #4F4F3C; background-color:transparent; text-transform:uppercase;}
 	
 	#primary{
 		position:relative;

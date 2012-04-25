@@ -8,8 +8,8 @@
   </tr>
   <% for contribution in @contributions %>
     <tr>
-      <td><%= contribution.ad_id %></td>
-      <td><%= contribution.user_id %></td>
+      <td><%= contribution.ad.title %></td>
+      <td><%= contribution.user.name %></td>
       <td><%= contribution.amount %></td>
       <td><%= link_to "Show", contribution %></td>
       <td><%= link_to "Edit", edit_contribution_path(contribution) %></td>

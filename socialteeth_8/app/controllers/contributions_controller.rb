@@ -1,4 +1,5 @@
 class ContributionsController < ApplicationController
+  before_filter :authenticate_user!, :except=>[:show, :index]
   def index
     @contributions = Contribution.all
   end

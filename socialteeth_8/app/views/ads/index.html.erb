@@ -9,7 +9,7 @@
   <% for ad in @ads %>
     <tr>
       <td><%= ad.title %></td>
-      <td><%= ad.user %></td>
+      <td><%= ad.user.name %></td>
       <td><%= ad.goal %></td>
       <td><%= link_to "Show", ad %></td>
       <td><%= link_to "Edit", edit_ad_path(ad) %></td>

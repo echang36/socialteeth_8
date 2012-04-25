@@ -5,9 +5,20 @@
   <%= @ad.title %>
 </p>
 
+
+
 <p>
 	<strong> Format: </strong>
 	<%= FORMAT[@ad.format] %>	
+</p>
+
+<p>
+	<% if @ad.image? %>
+		<%= image_tag @ad.image.url %>
+		<br />
+	<% else %>
+		No image found
+	<% end %>
 </p>
 
 <p>

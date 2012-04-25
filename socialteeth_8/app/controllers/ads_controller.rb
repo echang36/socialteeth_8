@@ -19,6 +19,7 @@ class AdsController < ApplicationController
   def create	
   	@ad=current_user.ads.build(params[:ad])
 	@ad.format=(params[:ad][:format])
+	@ad.image=(params[:ad][:image])
     if @ad.save
       redirect_to @ad, :notice => "Successfully created ad."
     else

@@ -5,4 +5,7 @@ class Ad < ActiveRecord::Base
   has_many :contributions
   
   validates_inclusion_of :format, :in=>[0,1,2], :allow_nil => false
+  
+  has_attached_file :image
+
 end

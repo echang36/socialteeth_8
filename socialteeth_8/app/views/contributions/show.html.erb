@@ -18,9 +18,9 @@
 	<%= link_to "Edit", edit_contribution_path(@contribution) %> |
  <% end %>
  
- <if can? :destroy, @ad %>
+ <% if can? :destroy, @ad %>
   <%= link_to "Destroy", @contribution, :confirm => 'Are you sure?', :method => :delete %> |
  <% end %> 
  
-
+<%= link_to "Show All", contributions_path %>
 </p>

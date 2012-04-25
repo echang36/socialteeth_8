@@ -14,6 +14,7 @@ class AdsController < ApplicationController
 
   def new
   #  @ad = Ad.new
+	@ads=Ad.all
   end
 
   def create	

@@ -3,7 +3,7 @@ class ContributionsController < ApplicationController
   load_and_authorize_resource
   
   def index
-   # @contributions = Contribution.all
+    @contributions = Contribution.all
   end
 
   def show
@@ -11,7 +11,7 @@ class ContributionsController < ApplicationController
   end
 
   def new
-  #  @contribution = Contribution.new
+  # @contribution = Contribution.new
   end
 
   def create

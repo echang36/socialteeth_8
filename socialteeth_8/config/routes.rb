@@ -1,4 +1,6 @@
 Socialteeth8::Application.routes.draw do
+  resources :homes
+
   resources :contributions
 
   resources :ads

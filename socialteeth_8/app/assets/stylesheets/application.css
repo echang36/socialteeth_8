@@ -34,7 +34,7 @@ light gray:#fafaf6;
 	
 /* Layout */	
 	#user_wrapper, #banner, #wrapper{
-		width:80%; min-width: 600px;
+		width:80%; min-width: 650px;
 		margin: 0 auto; margin-top: 5px;
 		color: #676F78;
 	}

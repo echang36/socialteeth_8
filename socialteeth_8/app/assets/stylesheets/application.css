@@ -34,7 +34,7 @@ light gray:#fafaf6;
 	
 /* Layout */	
 	#user_wrapper, #banner, #wrapper{
-		width:80%; min-width: 650px;
+		width:75%; min-width: 750px;
 		margin: 0 auto; margin-top: 5px;
 		color: #676F78;
 	}
@@ -65,25 +65,33 @@ light gray:#fafaf6;
 	#logo {float:left; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-size:48px; letter-spacing: 1px; color: #676F78; background-color:transparent; text-transform:uppercase;}
 	
 	#primary{
-		position:relative;
-		left:150px;
+		float: right;
 		background-color:transparent;
-		padding-top: 30px;
+		margin-top: 30px;
 		letter-spacing: 1px;
 	}
-	#primary ul li{
+	#primary ul li {
 		display: inline;
-		padding-left:30px;
+		margin-left: 35px;
 	}
+	
+	#primary li a {
+		background: #fafaf6;
+		padding: 5px 9px 0 9px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px; 
+	}
+	
 	#primary li a:hover {
-		padding: 5px 15px;
-		color:#fafaf6;
 		background: #F16251;
-		-webkit-border-radius: 7px;
-		-moz-border-radius: 7px;
-		border-radius: 7px;
+		color:#fafaf6;
+		text-decoration: none;
 	}
-		
+	#primary li a:active {
+		background: #f48375;
+		text-decoration: none;
+	}
 		
 /* for clearing */
 	.group:before, .group:after{

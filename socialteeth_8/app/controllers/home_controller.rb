@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  def show
-     @ads = Ad.all
+  def index
+	@ads=Ad.order(:title)
   end
+
 end

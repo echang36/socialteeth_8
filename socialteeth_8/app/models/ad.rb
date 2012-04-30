@@ -5,7 +5,7 @@ class Ad < ActiveRecord::Base
   #RELATIONS
   belongs_to :user, :dependent => :destroy
   has_many :contributions
-  has_attached_file :image
+
   
   #VALIDATIONS
   

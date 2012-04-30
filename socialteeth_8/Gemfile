@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem "nifty-generators", :group => :development
 gem "devise"
 gem "cancan"
+gem "carrierwave"
 
 
 # Gems used only for assets and not required

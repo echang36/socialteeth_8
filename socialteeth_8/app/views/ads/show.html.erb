@@ -1,15 +1,5 @@
 <h3> <%= @ad.title %> </h3>
-<%= FORMAT[@ad.format] %>	
-
-
-<div class="crop">
-	<% if @ad.image? %>
-		<%= image_tag @ad.image.url %>
-		<br />
-	<% else %>
-		No image found
-	<% end %>
-</div>
+<p><%= FORMAT[@ad.format] %><p>
 
 
 

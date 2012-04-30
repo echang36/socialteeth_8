@@ -12,7 +12,7 @@ class Ad < ActiveRecord::Base
   validates :title, :user, :goal, :format, presence: true
   validates :title, uniqueness: true
   validates_inclusion_of :format, :in=>[0,1,2], :allow_nil => false
-  validates :price, numericality: {greater_than_or_equal_to: 0.01}
+  validates :goal, numericality: {greater_than_or_equal_to: 0.01}
 
 
 end

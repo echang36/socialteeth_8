@@ -10,27 +10,28 @@
   </head>
   
   <body>
-	 <div id="user_wrapper">
-	  <% if user_signed_in? %>
-		Signed in as <%= current_user.email %>. Not you?
-		<%= link_to("Sign out", destroy_user_session_path, :method => :delete) %>
-	  <% else %>
-		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-	  <% end %>
-	 </div>
   
-	 <div id="banner" class="group">
-		<div id="logo"> <h1>Social Teeth </h1></div>
-		
-		<nav id="primary"> 
+	<div id="banner" class="group">
+		<div id="logo"> <%= link_to "Social Teeth", home_path %> </div>
+		<div id="user_wrapper">
+			  <% if user_signed_in? %>
+				Signed in as <%= current_user.email %>. | Not you?
+				<%= link_to("sign out", destroy_user_session_path, :method => :delete) %>
+			  <% else %>
+				<%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %>
+			  <% end %>
+		</div>
+	</div>
+	<div id="primary_container" class="group">
+		<nav id="primary">
 			<ul>
-			<li><%= link_to "Browse Ads", ads_path %></li>
-			<li><%= link_to "Submit an Ad", new_ad_path %> </li>
-
-
+				<li><%= link_to "Browse Ads", ads_path %></li> | 
+				<li><%= link_to "Submit an Ad", new_ad_path %> </li> |
+				<li><a href="#"> About Social Teeth </a></li>
 			</ul>
 		</nav>
-	 </div>
+	</div>
+
 	 
 
      <div id="wrapper">

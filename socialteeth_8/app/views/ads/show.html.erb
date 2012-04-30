@@ -1,25 +1,17 @@
-<% title "Ad" %>
-
-<p>
-  <strong>Title:</strong>
-  <%= @ad.title %>
-</p>
+<h3> <%= @ad.title %> </h3>
+<%= FORMAT[@ad.format] %>	
 
 
-
-<p>
-	<strong> Format: </strong>
-	<%= FORMAT[@ad.format] %>	
-</p>
-
-<p>
+<div class="crop">
 	<% if @ad.image? %>
 		<%= image_tag @ad.image.url %>
 		<br />
 	<% else %>
 		No image found
 	<% end %>
-</p>
+</div>
+
+
 
 <p>
   <strong>User:</strong>

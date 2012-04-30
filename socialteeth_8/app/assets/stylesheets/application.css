@@ -29,24 +29,27 @@ light gray:#fafaf6;
 	p { font-size:1em; margin-bottom:24px; line-height:1.5em; }
 	
 	a { color: #676F78; text-decoration: none; }
-	a:hover { text-decoration: underline; }
+	a:hover { color: #b9bec3 }
 
 	
 /* Layout */	
-	#user_wrapper, #banner, #wrapper{
-		width:75%; min-width: 750px;
-		margin: 0 auto; margin-top: 5px;
+	#banner, #wrapper, #primary_container{
+		width:70%; min-width: 750px;
+		margin: 0 auto; 
 		color: #676F78;
 	}
-	#user_wrapper{
-		height: 15px;
-		text-align: right;
-	}
 	#banner{
-		height: 65px;
+		/*height: 65px;*/
+		margin-top: 10px;
 		background-color: transparent;
-		border-bottom: 1px solid #676F78;
 		overflow:hidden;
+	}
+	#primary_container ul{
+		border-bottom: 1px solid #676F78;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		background-color: transparent;
 	}
 	#wrapper{ 
 		margin-top: 15px;
@@ -62,35 +65,31 @@ light gray:#fafaf6;
 	}
 	
 /* Header styles*/
-	#logo {float:left; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-size:48px; letter-spacing: 1px; color: #676F78; background-color:transparent; text-transform:uppercase;}
-	
-	#primary{
-		float: right;
-		background-color:transparent;
-		margin-top: 30px;
-		letter-spacing: 1px;
-	}
+	#logo {float:left; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-size:48px; color: #676F78; background-color:transparent; text-transform:uppercase;}
+	#user_wrapper{ float: right; height: 15px; text-align: right;}
 	#primary ul li {
 		display: inline;
-		margin-left: 35px;
+		letter-spacing: 0.5px;
+		margin: 0 15px 0 15px;
 	}
-	
+	#primary ul li:first-child{
+		margin: 0 15px 0 0;
+	}
 	#primary li a {
-		background: #fafaf6;
-		padding: 5px 9px 0 9px;
+		/*background: #fafaf6;
 		-webkit-border-radius: 3px;
 		-moz-border-radius: 3px;
-		border-radius: 3px; 
+		border-radius: 3px; */
 	}
 	
 	#primary li a:hover {
-		background: #F16251;
-		color:#fafaf6;
+		/*background: #F16251;
+		color:#fafaf6;*/
 		text-decoration: none;
 	}
 	#primary li a:active {
-		background: #f48375;
-		text-decoration: none;
+		/*background: #f48375;
+		text-decoration: none;*/
 	}
 		
 /* for clearing */
@@ -103,4 +102,22 @@ light gray:#fafaf6;
 	}
 	.group {
 		zoom: 1; /*IE6&7*/
+	}
+
+/* general box */
+	.box{
+		border: 1px solid #676F78;
+		margin: 5px 5px 5px 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px; 
+	}
+	
+	
+/* image */
+	.crop {
+		width: 30%;
+		min-width: 580px;
+		height: 380px;
+		overflow: hidden;
 	}

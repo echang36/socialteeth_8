@@ -1,21 +1,15 @@
-<% title "Home" %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>User</th>
-    <th>Goal</th>
-	<th>Format</th>
-  </tr>
-  <% for ad in @ads %>
-    <tr>
-      <td><%= ad.title %></td>
-      <td><%= ad.user.name %></td>
-      <td><%= ad.goal %></td>
-	  <td><%= FORMAT[ad.format] %> </td>
-      <td><%= link_to "Show", ad %></td>
-      <td><%= link_to "Edit", edit_ad_path(ad) %></td>
-      <td><%= link_to "Destroy", ad, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+
+<% for ad in @ads %>
+	<div class="project_list">
+		<div class="project_thumbnail">
+			<%= image_tag ad.image_url(:thumb).to_s %>
+		</div>
+		<strong><%= link_to ad.title, ad_path(ad) %></strong><br/>
+		Goal: <%= number_to_currency(ad.goal) %><br/>
+		<%= ad.user.name %><br/>
+		Format:<%= FORMAT[ad.format] %><br/>
+		<%= link_to "Edit", edit_ad_path(ad) %>
+		<%= link_to "Destroy", ad, :confirm => 'Are you sure?', :method => :delete %>
+	</div>
+<% end %>

@@ -13,7 +13,7 @@
     <tr>
       <td><%=contribution.ad.title %> /td>
       <td><%= contribution.user.name %> </td>
-      <td><%= contribution.amount %> </td>
+      <td><%= number_to_currency(contribution.amount) %> </td>
       <td><%= link_to "Show", contribution %></td>
       <td><%= link_to "Edit", edit_contribution_path(contribution) %></td>
       <td><%= link_to "Destroy", contribution, :confirm => 'Are you sure?', :method => :delete %></td>

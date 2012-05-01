@@ -2,9 +2,8 @@
 <p><%= FORMAT[@ad.format] %><p>
 
 <div class="image">
-	<%= image_tag @ad.image_url(:thumb).to_s %>
+	<%= image_tag @ad.image_url(:show).to_s %>
 </div>
-
 
 <p>
   <strong>User:</strong>
@@ -12,7 +11,7 @@
 </p>
 <p>
   <strong>Goal:</strong>
-  <%= @ad.goal %>
+  <%= number_to_currency(@ad.goal) %>
 </p>
 
  <%= link_to "Contribute", new_contribution_path(:ad_id=>@ad.id) %>

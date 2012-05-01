@@ -59,7 +59,7 @@ light gray:#fafaf6;
 		border-radius:15px;}
 	#main-content{
 		display:block;
-		padding: 10px 10px 10px 10px;
+		padding-top: 10px;
 		z-index:10;
 		color: #202020;
 	}
@@ -105,7 +105,7 @@ light gray:#fafaf6;
 	}
 
 /* general box */
-	.box{
+	.box, .project_list{
 		border: 1px solid #676F78;
 		margin: 5px 5px 5px 5px;
 		-webkit-border-radius: 5px;
@@ -113,11 +113,25 @@ light gray:#fafaf6;
 		border-radius: 5px; 
 	}
 	
-	
-/* image */
-	.crop {
-		width: 30%;
-		min-width: 580px;
-		height: 380px;
-		overflow: hidden;
+/* project box */
+	.project_list{
+		display: inline;
+		float: left;
+		margin: 10px 10px 10px 10px;
+		width: 200px;
+		height: 300px;
+		padding: 5px 5px 5px 5px;
+		overflow:hidden;
 	}
+	.project_list:first-child{
+		margin-left: 0;
+	}
+	
+	.project_thumbnail{
+		display: block;
+		margin-bottom: 5px;
+	}
+	
+
+	
+		

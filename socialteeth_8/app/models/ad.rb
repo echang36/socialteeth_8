@@ -1,10 +1,11 @@
 class Ad < ActiveRecord::Base
-  attr_accessible :title, :user, :goal, :format
+  attr_accessible :title, :user, :goal, :format, :image
   
   
   #RELATIONS
   belongs_to :user, :dependent => :destroy
   has_many :contributions
+  mount_uploader :image, ImageUploader
 
   
   #VALIDATIONS

@@ -3,7 +3,7 @@ class Ad < ActiveRecord::Base
   
   
   #RELATIONS
-  belongs_to :user, :dependent => :destroy
+  belongs_to :user
   has_many :contributions
   mount_uploader :image, ImageUploader
 

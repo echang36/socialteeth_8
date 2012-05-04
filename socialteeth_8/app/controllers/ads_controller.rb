@@ -40,7 +40,7 @@ class AdsController < ApplicationController
   end
 
   def destroy
-  #  @ad = Ad.find(params[:id])
+    @ad = Ad.find(params[:id])
     @ad.destroy
     redirect_to ads_url, :notice => "Successfully destroyed ad."
   end

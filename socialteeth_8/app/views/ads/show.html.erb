@@ -1,7 +1,6 @@
-<h3> <%= @ad.title %> </h3>
-<p><%= FORMAT[@ad.format] %><p>
+<h3> <%= @ad.title %> </h3> |<%= FORMAT[@ad.format] %>
 
-<div class="image">
+<div class="show_image">
 	<%= image_tag @ad.image_url(:show).to_s %>
 </div>
 

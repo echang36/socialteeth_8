@@ -1,0 +1,186 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+/* COLORS
+watermelon: #F16251;
+dark gray/brown: #202020;
+dark green/gray:#4F4F3C
+light gray:#fafaf6;
+*/
+
+/* General */
+	html { width:100%; height:100%; }
+	body { background:#FFFFFF; padding:0; margin:0; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; color:#676F78;}
+	
+/* Typography */
+
+	h1, h2, h3, h4, h5, h6 { font-weight:bold; }
+	h1 { font-size: 40px; letter-spacing: 2px; }
+	h2 { font-size: 32px; letter-spacing: 2px; }
+	h3 { font-size: 32px; }
+	h4 { font-size: 24px; }
+	h5 { font-size: 18px; }
+	h6 { font-size: 16px; }
+	p { font-size:1em; margin-bottom:24px; line-height:1.5em; }
+	
+	a { color: #676F78; text-decoration: none; }
+	a:hover { color: #b9bec3 }
+
+	
+/* Layout */	
+	#banner, #wrapper, #primary_container, #gallery{
+		width:70%; min-width: 750px;
+		margin: 0 auto; 
+		color: #676F78;
+	}
+	#banner{
+		/*height: 65px;*/
+		margin-top: 10px;
+		background-color: transparent;
+		overflow:hidden;
+	}
+	#primary_container ul{
+		border-bottom: 1px solid #676F78;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		background-color: transparent;
+	}
+	#wrapper{ 
+		margin-top: 15px;
+		background-color:#FFFFFF; 
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius:15px;}
+	#main-content{
+		display:block;
+		padding-top: 10px;
+		z-index:10;
+		color: #202020;
+	}
+	#gallery{
+		-moz-box-shadow: 0 0 3px #AAAAAA;
+		-webkit-box-shadow: 0 0 3px #AAAAAA;
+		box-shadow: 0 0 3px #AAAAAA;
+		border: 1px solid white;
+		overflow:hidden;
+	}
+	
+	
+/* Header styles*/
+	#logo {float:left; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-size:48px; color: #676F78; background-color:transparent; text-transform:uppercase;}
+	#user_wrapper{ float: right; height: 15px; text-align: right;}
+	#primary ul li {
+		display: inline;
+		letter-spacing: 0.5px;
+		margin: 0 15px 0 15px;
+	}
+	#primary ul li:first-child{
+		margin: 0 15px 0 0;
+	}
+	#primary li a {
+		/*background: #fafaf6;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px; */
+	}
+	
+	#primary li a:hover {
+		/*background: #F16251;
+		color:#fafaf6;*/
+		text-decoration: none;
+	}
+	#primary li a:active {
+		/*background: #f48375;
+		text-decoration: none;*/
+	}
+		
+/* for clearing */
+	.group:before, .group:after{
+		content: "";
+		display: table;
+	}
+	.group:after{
+		clear: both;
+	}
+	.group {
+		zoom: 1; /*IE6&7*/
+	}
+
+/* general box */
+	.box, .project_list{
+		border: 1px solid #676F78;
+		margin: 5px 5px 5px 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px; 
+	}
+	
+/* project box */
+	.project_list{
+		display: inline;
+		float: left;
+		margin: 10px 10px 10px 10px;
+		width: 200px;
+		height: 300px;
+		padding: 5px 5px 5px 5px;
+		overflow:hidden;
+	}
+	.project_list:first-child{
+		margin-left: 0;
+	}
+	
+	.project_thumbnail{
+		display: block;
+		margin-bottom: 5px;
+	}
+	
+/* Ad#Show */
+
+	.show_image{
+		float: left;
+		margin: 0 10px 10px 0;
+	}
+	
+		
+	/* Homepage Slider */
+
+	#slides{
+		height: 400px;
+		/*jQuery changes the width later on to the sum of the widths of all the slides */
+		width: 800px;
+		overflow: hidden;
+	}
+	.slide{
+		float: left;
+	}
+	#slide_menu{
+		height: 45px;
+		padding:5px;
+	}
+	#slide_menu ul{
+		float:right;
+		margin:0px;
+		padding:0px;
+	}
+	#slide_menu li{
+		width:60px;
+		display:inline-block;
+		list-style:none;
+		height:45px;
+		overflow:hidden;
+	}
+	.fbar{
+		width: 2px;
+	}
+	#slide_menu li a{
+		display:block;
+		height:35px;
+	}
+	
+	

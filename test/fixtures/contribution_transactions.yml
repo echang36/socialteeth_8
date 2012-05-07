@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contribution_id: 1
+  amount: 1
+  success: false
+  reference: MyString
+  message: MyString
+  action: MyString
+  params: MyText
+  test: false
+
+two:
+  contribution_id: 1
+  amount: 1
+  success: false
+  reference: MyString
+  message: MyString
+  action: MyString
+  params: MyText
+  test: false

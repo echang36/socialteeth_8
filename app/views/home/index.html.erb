@@ -1,0 +1,33 @@
+
+
+<div id="gallery" class="group">
+	<div id="slides">
+		<div class="slide"><%= image_tag("Chrys.jpg", :size=>"800x400")%></div>
+		<div class="slide"><%= image_tag("Jellyfish.jpg", :size=>"800x400")%></div>
+		<div class="slide"><%= image_tag("Koala.jpg", :size=>"800x400")%></div>
+		<div class="slide"><%= image_tag("Penguins.jpg", :size=>"800x400")%></div>
+	</div>
+	<div id="slide_menu">
+		<ul>
+		<li class="fbar">&nbsp;</li>
+		<li class="slide_menuitem"><a href=""><%= image_tag "Chrys.jpg" %></a></li>
+		<li class="slide_menuitem"><a href=""><%= image_tag "Jellyfish.jpg" %></a></li>
+		<li class="slide_menuitem"><a href=""><%= image_tag "Koala.jpg" %></a></li>
+		<li class="slide_menuitem"><a href=""><%= image_tag "Penguins.jpg" %></a></li>
+		</ul>
+	</div>
+</div>
+
+<% for ad in @ads %>
+	<div class="project_list">
+		<div class="project_thumbnail">
+			<%= image_tag ad.image_url(:thumb).to_s %>
+		</div>
+		<strong><%= link_to ad.title, ad_path(ad) %></strong><br/>
+		Goal: <%= number_to_currency(ad.goal) %><br/>
+		<%= ad.user.name %><br/>
+		Format:<%= FORMAT[ad.format] %><br/>
+		<%= link_to "Edit", edit_ad_path(ad) %>
+		<%= link_to "Destroy", ad, :confirm => 'Are you sure?', :method => :delete %>
+	</div>
+<% end %>

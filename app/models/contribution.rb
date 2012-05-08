@@ -1,4 +1,7 @@
 class Contribution < ActiveRecord::Base
+
+  include AASM
+
   attr_accessible :ad_id, :user_id, :amount, :status
   
   belongs_to :user, :dependent => :destroy

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @contribution.user.name %>
+</p>
+
+<p>
+  <b>Ad:</b>
+  <%= @contribution.ad.title %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @contribution.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_contribution_path(@contribution) %> |
+<%= link_to 'Back', contributions_path %>

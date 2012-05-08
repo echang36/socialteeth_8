@@ -1,0 +1,27 @@
+
+<%= form_for @ad, :html => {:multipart => true} do |f| %>
+
+   <%= f.error_messages %>
+ 
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+	<%=f.label :format %> <br/>
+	<%=f.select(:format, [["Video", 0],["Audio",1],["Print",2]] ) %>
+  </p>
+
+  <p>
+    <%= f.label :goal %><br />
+    <%= f.text_field :goal %>
+  </p>
+  
+  <p>
+	<%= f.file_field :image %>
+  </p>
+
+  
+  <p><%= f.submit %></p>
+<% end %>

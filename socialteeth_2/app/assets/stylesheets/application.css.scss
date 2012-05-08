@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will
+ * include all the files listed below.
+ * 
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets,
+ * vendor/assets/stylesheets, or vendor/assets/stylesheets of plugins, if any,
+ * can be referenced here using a relative path.
+ * 
+ * You're free to add application-wide styles to this file and they'll appear
+ * at the top of the compiled file, but it's generally better to create a new
+ * file per style scope.
+ * 
+ *= require_self
+ *= require_tree .
+*/
+
+/* START_HIGHLIGHT */
+#banner {
+  background: #FFFFFF;
+  padding: 12px;
+  border: 2px solid;
+  font: small-caps 80px/80px "Courier New", monospace;
+  color: #333366;
+  text-align: left;
+
+  img {
+    float: left;
+  }
+}
+
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+#columns {
+  background: #FFFFFF;
+  border: 1px solid;
+
+
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+	padding-bottom: 10em;
+    background: white;
+	border: 1px solid;
+  }
+
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: #FFFFFF;
+
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #333366;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+/* END_HIGHLIGHT */

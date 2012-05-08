@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Social Teeth" %></title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %> <!--*change application to defaults? -->
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  
+  <body>
+  
+	<div id="banner" class="group">
+		<div id="logo"> <%= link_to "Social Teeth", home_path %> </div>
+		<div id="user_wrapper">
+			  <% if user_signed_in? %>
+				Signed in as <%= current_user.email %>. | Not you?
+				<%= link_to("Sign out", destroy_user_session_path, :method => :delete) %>
+			  <% else %>
+				<%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %>
+			  <% end %>
+		</div>
+	</div>
+	<div id="primary_container" class="group">
+		<nav id="primary">
+			<ul>
+				<li><%= link_to "Browse Ads", ads_path %></li> | 
+				<li><%= link_to "Submit an Ad", new_ad_path %> </li> |
+				<li><a href="#"> About Social Teeth </a></li>
+			</ul>
+		</nav>
+	</div>
+
+	 
+
+     <div id="wrapper">
+		
+		 <div id="main-content">
+	    	<% flash.each do |name, msg| %>
+				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		    <% end %>
+		    <%= content_tag :h1, yield(:title) if show_title? %>
+			  
+			  
+			<%= yield %>
+		</div>
+	  
+	</div>
+ 
+ 
+  </body>
+</html>

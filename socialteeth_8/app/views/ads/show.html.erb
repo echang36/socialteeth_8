@@ -1,0 +1,25 @@
+<h3> <%= @ad.title %> </h3> |<%= FORMAT[@ad.format] %>
+
+<div class="show_image">
+	<%= image_tag @ad.image_url(:show).to_s %>
+</div>
+
+<p>
+  <strong>User:</strong>
+  <%= @ad.user.name %>
+</p>
+<p>
+  <strong>Goal:</strong>
+  <%= number_to_currency(@ad.goal) %>
+</p>
+
+ <%= link_to "Contribute", new_contribution_path(:ad_id=>@ad.id) %>
+
+<p>
+	
+	  <%= link_to "Edit", edit_ad_path(@ad) %> |
+
+		<%= link_to "Destroy", @ad, :confirm => 'Are you sure?', :method => :delete %> |
+
+	<%= link_to "View All", ads_path %>
+</p>

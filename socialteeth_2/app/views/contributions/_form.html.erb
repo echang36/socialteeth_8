@@ -1,0 +1,32 @@
+<%= form_for(contribution) do |f| %>
+  
+
+  
+  <% if contribution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contribution.errors.count, "error") %> prohibited this contribution from being saved:</h2>
+
+      <ul>
+      <% contribution.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.hidden_field(:ad, :value=> ad_id) %>
+  
+  <div class="field">
+    <%= f.label "User email" %><br />
+    <%= f.text_field :user %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

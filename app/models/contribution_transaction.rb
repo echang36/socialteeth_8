@@ -22,7 +22,7 @@ class ContributionTransaction < ActiveRecord::Base
 		private
 		
 		def process(action, amount = nil)
-			result = OrderTransaction.new
+			result = ContributionTransaction.new
 			result.amount = amount
 			result.action = action
 			begin

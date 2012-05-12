@@ -6,10 +6,13 @@
  *= require_tree .
 */
 
-$cyan: #3774C2;
+$pageWidth: 1000px;
 $darkGray: #676767;
 $lightGray: #b9b9b9;
-$pageWidth: 1000px;
+$cyan: #3774C2;
+$magenta: #C237BA;
+$orange: #C28437;
+$green: #37C23E;
 
 /* General */
 * {
@@ -77,8 +80,10 @@ a {
   #headerContents {
     width: $pageWidth;
     margin: auto;
+    border-bottom: 1px solid $lightGray;
 
     #logo {
+      display: inline-block;
       font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size:48px;
       color: $darkGray;
@@ -87,10 +92,23 @@ a {
     }
 
     nav {
-      border-bottom: 1px solid #676F78;
-      list-style-type: none;
+      padding-left: 400px;
+      display: inline-block;
+      list-style: none;
 
-      li { display: inline; }
+      li {
+        display: inline-block;
+        margin: 0px 3px;
+        &:nth-of-type(1) { border-top: 4px solid $cyan; }
+        &:nth-of-type(2) { border-top: 4px solid $orange; }
+
+        a {
+          display: inline-block;
+          padding: 7px 10px;
+          border-left: 1px solid $lightGray;
+          border-right: 1px solid $lightGray;
+        }
+      }
     }
   }
 }

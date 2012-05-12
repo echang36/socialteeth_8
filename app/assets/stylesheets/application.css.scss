@@ -6,9 +6,11 @@
  *= require_tree .
 */
 
+@import "bourbon";
+
 $pageWidth: 1000px;
 $darkGray: #676767;
-$lightGray: #b9b9b9;
+$lightGray: #E0E0E0;
 $cyan: #3774C2;
 $magenta: #C237BA;
 $orange: #C28437;
@@ -26,7 +28,6 @@ html {
 }
 
 body {
-  background:#FFFFFF;
   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#676F78;
 }
@@ -58,6 +59,10 @@ a {
 /* Layout */
 
 #header {
+  background: url(/assets/background_tile.png);
+  background-color: white;
+  border-bottom: 1px solid $lightGray;
+
   #banner {
     color: #FFFFFF;
     background-color: #000000;
@@ -66,8 +71,8 @@ a {
       margin: auto;
 
       #userWrapper {
-        height: 20px;
-        padding-top: 5px;
+        height: 15px;
+        padding: 5px;
         text-align: right;
         text-transform: uppercase;
         font-size: 0.8em;
@@ -80,33 +85,41 @@ a {
   #headerContents {
     width: $pageWidth;
     margin: auto;
-    border-bottom: 1px solid $lightGray;
+    display: table;
+    table-layout: fixed;
 
     #logo {
-      display: inline-block;
-      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size:48px;
-      color: $darkGray;
-      background-color: transparent;
-      text-transform: uppercase;
+      display: table-cell;
+      a {
+        display: block;
+        height: 64px;
+        background: url(/assets/logo.png) -4px 4px no-repeat;
+      }
     }
 
     nav {
-      padding-left: 400px;
-      display: inline-block;
+      display: table-cell;
+      vertical-align: top;
       list-style: none;
+
+      ul {
+        background-color: #FFFFFF;
+        float: right;
+      }
 
       li {
         display: inline-block;
-        margin: 0px 3px;
-        &:nth-of-type(1) { border-top: 4px solid $cyan; }
-        &:nth-of-type(2) { border-top: 4px solid $orange; }
+        float: left;
+        &:nth-of-type(1) { border-top: 5px solid $cyan; }
+        &:nth-of-type(2) { border-top: 5px solid $orange; }
+
+        &:nth-of-type(1) a { border-left: 1px solid $lightGray }
 
         a {
           display: inline-block;
-          padding: 7px 10px;
-          border-left: 1px solid $lightGray;
           border-right: 1px solid $lightGray;
+          padding: 20px;
+          font-weight: bold;
         }
       }
     }
@@ -116,16 +129,14 @@ a {
 #main {
   width: $pageWidth;
   margin: auto;
-
+  padding-top: 30px;
 }
 
 /* general box */
 .box, .project_list {
   border: 1px solid #676F78;
   margin: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 /* project box */

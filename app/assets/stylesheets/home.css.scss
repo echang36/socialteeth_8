@@ -2,42 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#slides {
-  /*jQuery changes the width later on to the sum of the widths of all the slides */
+#gallery {
   width: 800px;
-  height: 400px;
-  overflow: hidden;
+  -moz-box-shadow: 0 0 3px #AAAAAA;
+  -webkit-box-shadow: 0 0 3px #AAAAAA;
+  box-shadow: 0 0 3px #AAAAAA;
+  border: 1px solid white;
+  overflow:hidden;
+  margin: auto;
+  margin-top: 40px;
 
-  .slide{
-    float: left;
-  }
-}
+  #slides {
+    /*jQuery changes the width later on to the sum of the widths of all the slides */
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
 
-
-#slide_menu {
-  height: 45px;
-  padding:5px;
-
-  ul {
-    float:right;
-    margin:0px;
-    padding:0px;
-
-    li {
-      width:60px;
-      display:inline-block;
-      list-style:none;
-      height:45px;
-      overflow:hidden;
-
-      a {
-        display:block;
-        height:35px;
-      }
+    .slide{
+      float: left;
     }
   }
 
-  .fbar{
-    width: 2px;
+  #slide_menu {
+    height: 45px;
+    padding:5px;
+
+    ul {
+      float:right;
+      margin:0px;
+      padding:0px;
+
+      li {
+        width:60px;
+        display:inline-block;
+        list-style:none;
+        height:45px;
+        overflow:hidden;
+
+        a {
+          display:block;
+          height:35px;
+        }
+      }
+    }
+
+    .fbar{
+      width: 2px;
+    }
   }
 }
+
+

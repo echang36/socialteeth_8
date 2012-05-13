@@ -14,6 +14,7 @@ gem "carrierwave"
 gem "rmagick"
 gem "activemerchant", :require=> 'active_merchant'
 gem "aasm"
+gem "bourbon"
 
 # Gems used only for assets and not required
 # in production environments by default.

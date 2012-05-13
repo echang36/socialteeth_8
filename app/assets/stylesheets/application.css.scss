@@ -46,7 +46,7 @@ h6 { font-size: 16px; }
 p {
   font-size:1em;
   margin-bottom:10px;
-  line-height:1.5em;
+  line-height: 1.5em;
 }
 
 a {
@@ -134,24 +134,11 @@ a {
   padding-top: 30px;
 }
 
-/* general box */
-.box, .project_list {
-  border: 1px solid #676F78;
-  margin: 5px 5px 5px 5px;
-  @include border-radius(5px);
-}
-
-/* project box */
-.project_list {
-  display: inline;
-  float: left;
-  margin: 10px 10px 10px 10px;
-  width: 200px;
-  height: 300px;
-  padding: 5px 5px 5px 5px;
-  overflow:hidden;
-
-  &:first-child { margin-left: 0px; }
+.projectTitle {
+  a {
+    color: $cyan;
+    font-size: 1.4em;
+  }
 }
 
 .projectThumbnail {

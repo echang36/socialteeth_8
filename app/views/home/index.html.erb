@@ -30,11 +30,8 @@
       <div class="projectProgress">
         <% contribution_progress = @featuredAd.contribution_progress.round %>
         <p>
-          <span class="dollarAmount">
-            $<%= number_with_delimiter(contribution_progress, :delimiter => ",") %></span> of
-          <span class="dollarAmount">
-            $<%= number_with_delimiter(@featuredAd.goal.round, :delimiter => ",") %>
-          </span> raised.
+          <span class="dollarAmount"><%= number_to_currency(contribution_progress) %></span> of
+          <span class="dollarAmount"><%= number_to_currency(@featuredAd.goal) %></span> raised.
         </p>
         <progress max="100" value="<%= contribution_progress %>"></progress>
       </div>
@@ -42,16 +39,22 @@
   </div>
 </div>
 
-<% for ad in @ads %>
-  <div class="project_list">
-    <div class="projectThumbnail">
-      <%= image_tag ad.image_url(:thumb).to_s %>
+<div id="projectList">
+  <% for ad in @ads %>
+    <div class="project">
+      <div class="projectThumbnail">
+        <%= image_tag ad.image_url(:thumb).to_s %>
+      </div>
+      <div class="projectTitle"><%= link_to ad.title, ad_path(ad) %></div>
+      <div>Goal: <span class="dollarAmount"><%= number_to_currency(ad.goal) %></span></div>
+      <div><%= ad.user.name %></div>
+      <div class="projectDescription">
+        <p>Aliquam sem turpis, placerat eu rhoncus eget, varius at est. Nunc imperdiet turpis vel justo porta sed sollicitudin ante mollis.</p>
+      </div>
+      <!--
+      <%= link_to "Edit", edit_ad_path(ad) %>
+      <%= link_to "Destroy", ad, :confirm => 'Are you sure?', :method => :delete %>
+      -->
     </div>
-    <strong><%= link_to ad.title, ad_path(ad) %></strong><br/>
-    Goal: <%= number_to_currency(ad.goal) %><br/>
-    <%= ad.user.name %><br/>
-    Format:<%= FORMAT[ad.format] %><br/>
-    <%= link_to "Edit", edit_ad_path(ad) %>
-    <%= link_to "Destroy", ad, :confirm => 'Are you sure?', :method => :delete %>
-  </div>
-<% end %>
+  <% end %>
+</div>

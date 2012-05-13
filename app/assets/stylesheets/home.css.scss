@@ -20,13 +20,6 @@
     .projectInfo {
       vertical-align: top;
       display: table-cell;
-
-      .projectTitle {
-        a {
-          color: $cyan;
-          font-size: 1.4em;
-        }
-      }
     }
   }
 }
@@ -80,4 +73,22 @@
   }
 }
 
+#projectList {
+  .project {
+    display: inline-block;
+    width: 450px;
+    margin: 20px;
+    height: 300px;
 
+    .projectThumbnail {
+      float: left;
+      margin-right: 10px;
+    }
+
+    .projectDescription {
+      margin-top: 10px;
+      font-size: 0.9em;
+      p { line-height: 1.2em; }
+    }
+  }
+}

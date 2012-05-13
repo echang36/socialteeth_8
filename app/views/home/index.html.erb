@@ -20,7 +20,7 @@
   <h4>Featured Campaign</h4>
   <div id="featuredAdContents">
     <div class="projectThumbnail">
-      <%= image_tag @featuredAd.image_url.to_s %>
+      <%= image_tag @featuredAd.image_url(:thumb).to_s %>
     </div>
     <div class="projectInfo">
       <div class="projectTitle"><%= link_to @featuredAd.title, ad_path(@featuredAd) %></div>

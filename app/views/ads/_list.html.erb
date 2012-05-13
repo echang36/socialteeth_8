@@ -1,0 +1,19 @@
+<div id="projectList">
+  <% for ad in @ads %>
+    <div class="project">
+      <div class="projectThumbnail">
+        <%= image_tag ad.image_url(:thumb).to_s %>
+      </div>
+      <div class="projectTitle"><%= link_to ad.title, ad_path(ad) %></div>
+      <div>Goal: <span class="dollarAmount"><%= number_to_currency(ad.goal) %></span></div>
+      <div><%= ad.user.name %></div>
+      <div class="projectDescription">
+        <p>Aliquam sem turpis, placerat eu rhoncus eget, varius at est. Nunc imperdiet turpis vel justo porta sed sollicitudin ante mollis.</p>
+      </div>
+      <!--
+      <%= link_to "Edit", edit_ad_path(ad) %>
+      <%= link_to "Destroy", ad, :confirm => 'Are you sure?', :method => :delete %>
+      -->
+    </div>
+  <% end %>
+</div>

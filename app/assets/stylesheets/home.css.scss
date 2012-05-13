@@ -2,6 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#featuredAd {
+  margin: 30px;
+  padding: 30px;
+  border-bottom: 1px solid $lightGray;
+
+  #featuredAdContents {
+    margin-top: 20px;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+
+    .projectThumbnail {
+      display: table-cell;
+    }
+
+    .projectInfo {
+      vertical-align: top;
+      display: table-cell;
+
+      .projectTitle {
+        a {
+          color: $cyan;
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+}
+
 #gallery {
   width: 800px;
   -moz-box-shadow: 0 0 3px #AAAAAA;

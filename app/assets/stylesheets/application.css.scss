@@ -3,18 +3,19 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree .
 */
 
-@import "bourbon";
-
+/* Global constants available in all stylesheets. */
 $pageWidth: 1000px;
 $darkGray: #676767;
 $lightGray: #E0E0E0;
 $cyan: #3774C2;
 $magenta: #C237BA;
 $orange: #C28437;
-$green: #37C23E;
+$green: #2FA936;
+
+@import "bourbon";
+@import "home";
 
 /* General */
 * {
@@ -29,6 +30,7 @@ html {
 
 body {
   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   color:#676F78;
 }
 
@@ -43,7 +45,7 @@ h6 { font-size: 16px; }
 
 p {
   font-size:1em;
-  margin-bottom:24px;
+  margin-bottom:10px;
   line-height:1.5em;
 }
 
@@ -152,11 +154,15 @@ a {
   &:first-child { margin-left: 0px; }
 }
 
-.project_thumbnail {
-  display: block;
+.projectThumbnail {
+  display: inline-block;
   margin-bottom: 5px;
 }
 
+.dollarAmount {
+  color: $green;
+  font-weight: bold;
+}
 
 /* Ad#Show */
 .show_image {

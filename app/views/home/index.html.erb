@@ -1,5 +1,3 @@
-
-
 <div id="gallery" class="group">
   <div id="slides">
     <div class="slide"><%= image_tag("Chrys.jpg", :size=>"800x400")%></div>
@@ -18,9 +16,35 @@
   </div>
 </div>
 
+<div id="featuredAd">
+  <h4>Featured Campaign</h4>
+  <div id="featuredAdContents">
+    <div class="projectThumbnail">
+      <%= image_tag @featuredAd.image_url.to_s %>
+    </div>
+    <div class="projectInfo">
+      <div class="projectTitle"><%= link_to @featuredAd.title, ad_path(@featuredAd) %></div>
+      <div class="projectDescription">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor, arcu sit amet auctor tempor, lacus nulla imperdiet enim, sit amet tempus massa lorem porttitor ipsum. Nullam tristique congue magna, et aliquam dui bibendum gravida. Aliquam sem turpis, placerat eu rhoncus eget, varius at est. Nunc imperdiet turpis vel justo porta sed sollicitudin ante mollis. Sed vehicula nunc a risus dignissim commodo. Aliquam interdum felis non est rutrum sed rhoncus mauris fermentum.</p>
+      </div>
+      <div class="projectProgress">
+        <% contribution_progress = @featuredAd.contribution_progress.round %>
+        <p>
+          <span class="dollarAmount">
+            $<%= number_with_delimiter(contribution_progress, :delimiter => ",") %></span> of
+          <span class="dollarAmount">
+            $<%= number_with_delimiter(@featuredAd.goal.round, :delimiter => ",") %>
+          </span> raised.
+        </p>
+        <progress max="100" value="<%= contribution_progress %>"></progress>
+      </div>
+    </div>
+  </div>
+</div>
+
 <% for ad in @ads %>
   <div class="project_list">
-    <div class="project_thumbnail">
+    <div class="projectThumbnail">
       <%= image_tag ad.image_url(:thumb).to_s %>
     </div>
     <strong><%= link_to ad.title, ad_path(ad) %></strong><br/>

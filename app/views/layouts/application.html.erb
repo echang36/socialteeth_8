@@ -32,8 +32,8 @@
         <div id="logo"><%= link_to "", home_path %></div>
         <nav>
           <ul>
-            <li><%= link_to "Browse Ads", ads_path %></li>
-            <li><%= link_to "Submit an Ad", new_ad_path %> </li>
+            <li class="<%= current_page_link(ads_path) %>"><%= link_to "Browse Ads", ads_path %></li>
+            <li class="<%= current_page_link(new_ad_path) %>"><%= link_to "Submit an Ad", new_ad_path %> </li>
           </ul>
         </nav>
       </div>

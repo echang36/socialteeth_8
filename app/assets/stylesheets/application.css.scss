@@ -59,9 +59,7 @@ a {
 /* Layout */
 
 #header {
-  background: url(/assets/background_tile.png);
-  background-color: white;
-  border-bottom: 1px solid $lightGray;
+  @include linear-gradient(top, #FFFFFF, $lightGray);
 
   #banner {
     color: #FFFFFF;
@@ -103,21 +101,23 @@ a {
       list-style: none;
 
       ul {
-        background-color: #FFFFFF;
         float: right;
       }
 
       li {
+        $navBorder: #C7C7C7;
         display: inline-block;
         float: left;
         &:nth-of-type(1) { border-top: 5px solid $cyan; }
         &:nth-of-type(2) { border-top: 5px solid $orange; }
 
-        &:nth-of-type(1) a { border-left: 1px solid $lightGray }
+        &:nth-of-type(1) a { border-left: 1px solid $navBorder; }
+
+        &.current { background-color: #FFFFFF; }
 
         a {
           display: inline-block;
-          border-right: 1px solid $lightGray;
+          border-right: 1px solid $navBorder;
           padding: 20px;
           font-weight: bold;
         }
